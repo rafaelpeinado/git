@@ -1,4 +1,6 @@
 # Using GitFlow
+(Comparação entre comandos com e sem CLI Gitflow)[https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow]
+
 ## Introduction
 ### Git Branching Models
 * **Centralized:** onde mantemos tudo em um servidor centralizado
@@ -46,6 +48,34 @@ Entrar na pasta com **cd gitflow** e no próximo passo instalar o Gitflow com **
 ### Setting Up a Repository to use GitFlow
 * git init
 * git flow init
+
+
+
+## Creating and Using Feature Branches
+### Introduction
+* Criamos um local de trabalho onde um trabalho específico será feito
+* Não queremos todo o trabalho feito na branch main
+    * isso é difícil de rastrear, além de ser difícil de separar o trabalho de um recurso a outro recurso
+    * dificulta o gerenciamento dos merges, pois as vezes queremos uma feature específica e acabaremos subindo algum recurso que não queremos em produção
+    * dificulta retroceder o trabalho, quando necessário. Por exemplo, se estou resolvendo a feature por uma abordagem que percebi que não dá certo, eu posso simplesmente apagar a branch e começar de novo. Se estiver tudo na branch main, não consigo retroceder esse trabalho já feito
+    * dificulta a testar ou experimentar. Por exemplo, podemos criar uma branch para testar uma lib nova e, se não der certo, simplesmente descartar
+
+Para criar um nova feature usamos **git flow feature start feature-name**
+Quando acabar a feature usamos **git flfow feature finish feature-name**
+
+### Creating a Feature Branch
+git flow feature start feature-name
+
+### Publishing and Tracking a Feature Branch
+Para disponibilizar a branch para alguém revisar nosso código, precisamos usar o comando **git flow feature publish feature-name**.
+Para acompanhar as mudanças entre o repositório local e remoto, precisar usar o comando **git flow featuer track feature-name**.
+
+### Finishing a Feature Branch
+git flfow feature finish feature-name
+A branch é mergeada com a develop e apagada local e remotamente.
+
+
+
 
 
 
