@@ -101,6 +101,40 @@ Será criada uma tag para a branch.
 git push --tags para publicar uma tag
 
 
+## Creating a Hotfix
+### Introduction
+* Criamos uma branch hotfix
+* Finalizamos a branch hotfix
+
+#### Why Hotfixes?
+* Código nunca está perfeito
+    * Frequentemente encontramos bugs em produção
+* Hotfix permite uma atualização na brach de produção (branch master)
+
+#### What is a Hotfix Branch?
+* Uma correção emergencial para o código da release
+* Criar uma branch hotfix a partir da branch master
+* Mergeamos todas as nossas correções na master e na develop
+
+#### Git Flow Hot Fix
+* git flow hotfix start < version >
+* git flow hotfix finish < version >
+* git flow hotfix publish < version >
+* git flow hotfix track < version >
+
+
+### Creating a Hotfix Branch
+Cria um branch hotfix/hotfix-name a partir da branch master
+E também é necessário aumentar o número da versão
+Após usar git flow hotfix finish, a branch é mergeada na master, criada uma tag, a tag é mergeada na develop e a branch hotfix é deletada.
+Após isso, temos que ir para git checkout master e subir as alterações locais com git push --all origin
+
+
+
+
+
+
+
 
 
 
