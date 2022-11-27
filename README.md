@@ -71,8 +71,35 @@ Para disponibilizar a branch para alguém revisar nosso código, precisamos usar
 Para acompanhar as mudanças entre o repositório local e remoto, precisar usar o comando **git flow featuer track feature-name**.
 
 ### Finishing a Feature Branch
-git flfow feature finish feature-name
+git flow feature finish feature-name
 A branch é mergeada com a develop e apagada local e remotamente.
+
+
+## Creating a Release Branch
+### Introduction
+* Criamos uma branch de release
+* Finalizamos uma branch de release
+* Ajustamos bug na branch de relese
+
+#### What is a Release Branch?
+* É um ponto no tempo em que a release está pronta
+* Nesse ponto é testado e aprovado pelo QA
+* Qualquer correção deve ser feita na branch de release e mergeada de volta para a develop
+
+### Creating a Release Branch
+git flow release start release-name: Cria uma nova branch com o nome release/release-name
+git flow release publish release-name: publica a release remotamente (comando push) para disponibilizar para outras pessoas.
+
+git checkout develop
+git merge release/release-name: a mudança será mergeada na develop
+git push
+
+### Finishing the Release Branch
+git flow release finish release-name
+Faz merge da release com a main e apaga a branch local e remotamente.
+Será criada uma tag para a branch.
+git push --tags para publicar uma tag
+
 
 
 
