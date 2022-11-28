@@ -130,6 +130,19 @@ Após usar git flow hotfix finish, a branch é mergeada na master, criada uma ta
 Após isso, temos que ir para git checkout master e subir as alterações locais com git push --all origin
 
 
+## Creating a Build
+### Using TeamCity to Build a Master Branch
+Depois de criar um project, é necessário criar um VCS Root, que apontará para o nosso sistema de controle de versão, que nesse caso será o Git e ele usará para pegar as fontes que precisamos para fazer build de um código para nós.
+
+### Setting up TeamCity to Build all Branches
+Vamos em VCS Roots, editamos o projeto desejado e em Branch specification fazemos configurações em Edit branch especification e digitamos
++:refs/heads/develop
++:refs/heads/feature/*
++:refs/heads/hotfix/*
++:refs/heads/master
++:refs/heads/release
++:refs/heads/support/*
+
 
 
 
